@@ -1,5 +1,17 @@
 import randomWords from "random-words";
 import './style.css'
+import img0 from './images/0.jpg'
+import img1 from './images/1.jpg'
+import img2 from './images/2.jpg'
+import img3 from './images/3.jpg'
+import img4 from './images/4.jpg'
+import img5 from './images/5.jpg'
+import img6 from './images/6.jpg'
+import sfx_alert from './sounds/mixkit-cartoon-alert-728.wav'
+import sfx_won from './sounds/mixkit-completion-of-a-level-2063.wav'
+import sfx_right from './sounds/mixkit-instant-win-2021.wav'
+import sfx_lost from './sounds/mixkit-sad-game-over-trombone-471.wav'
+import music from './sounds/Sneaky-Snitch.mp3'
 
 
 const STATE = Object.freeze({
@@ -21,13 +33,15 @@ const MESSAGE = new Map([
 ]);
 
 const SFX = new Map([
-  [STATE.INVALID_INPUT, new Audio("./sounds/mixkit-cartoon-alert-728.wav")],
-  [STATE.ALREADY_GUESSED, new Audio("./sounds/mixkit-cartoon-alert-728.wav")],
-  [STATE.WRONG_GUESS, new Audio("./sounds/mixkit-cartoon-alert-728.wav")],
-  [STATE.WON, new Audio("./sounds/mixkit-completion-of-a-level-2063.wav")],
-  [STATE.RIGHT_GUESS, new Audio("./sounds/mixkit-instant-win-2021.wav")],
-  [STATE.LOST, new Audio("./sounds/mixkit-sad-game-over-trombone-471.wav")]
+  [STATE.INVALID_INPUT, new Audio(sfx_alert)],
+  [STATE.ALREADY_GUESSED, new Audio(sfx_alert)],
+  [STATE.WRONG_GUESS, new Audio(sfx_alert)],
+  [STATE.WON, new Audio(sfx_won)],
+  [STATE.RIGHT_GUESS, new Audio(sfx_right)],
+  [STATE.LOST, new Audio(sfx_lost)]
 ])
+
+const IMAGES = [img0, img1, img2, img3, img4, img5, img6]
 
 const model = {
   _secretWord: undefined,
@@ -79,7 +93,7 @@ const model = {
 }
 
 const view = {
-  _music: new Audio("./sounds/Sneaky-Snitch.mp3"),
+  _music: new Audio(music),
   _word: document.getElementById('word'),
   _manImage: document.getElementById('manImage'),
   _message: document.getElementById('message'),
@@ -101,7 +115,7 @@ const view = {
       this._word.append(divLetter)
     }
     this._divLetters = document.querySelectorAll('.letter')
-    this._manImage.src = './images/0.jpg'
+    this._manImage.src = IMAGES[0]
     this._message.textContent = ''
     this._guessedLetters.textContent = ''
     this._userInput.style.display = 'inline-block'
@@ -164,7 +178,7 @@ const view = {
     })
   },
   _updateHangman: function (wrongGuesses) {
-    this._manImage.src = `./images/${wrongGuesses}.jpg`
+    this._manImage.src = IMAGES[wrongGuesses]
   },
   _endGame: function () {
     this._userInput.style.display = 'none'
