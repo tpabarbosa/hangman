@@ -1,0 +1,220 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* header style */
+body {
+  background-color: #252938;
+  min-height: 100vh;
+  color: #c4c4c4;
+}
+.header{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.intro-image {
+  width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+
+  max-width: 300px;
+}
+
+#page-1 {
+  background-color: white;
+  color: #de5059;
+}
+
+#page-1 h3 {
+  background-color: white;
+  color: #de5059;
+}
+
+h1{
+  font-size: 48px;
+  margin: 10px 0;
+  text-align: center;
+  color: #de5059;
+}
+
+h3{
+  background-color: black;
+  max-width: 500px;
+  font-size: 24px;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.imgHeader{
+  width: 60px;
+  object-fit: contain;
+}
+
+
+#man {
+  background-color: black;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+}
+/* hanger and man syle */
+
+#manImage{
+  height: 270px;
+  display:block;
+}
+
+#message {
+  margin: 0 auto;
+  font-size: 24px;
+  margin-top: 30px;
+  text-align: center;
+  min-height: 30px;
+}
+
+.letters {
+  text-align: center;
+}
+
+.input-area {
+  background-color: #c4c4c4;
+  color: black;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+
+/* word space */
+
+#word{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+/* essa classe eu criei no JS */
+.letter{
+  display: inline-block;
+  text-align: center;
+  font-size: 24px;
+  margin: 0 8px;
+  width: 32px;
+  height: 32px;
+  border-bottom: 4px solid #c4c4c4;
+}
+
+/* input letter style */
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+#userInput{
+  padding: 10px;
+  border: 2px solid #de5059;
+  border-radius: 10px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+.btn {
+  appearance:none;
+  padding:10px 20px;
+  border:none;
+  background-color: #de5059;
+  color:#fff;
+  font-weight:600;
+  border-radius:5px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  box-shadow:0 0 4px rgba(0,0,0,0.5);
+  background-color: #9c2e35;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.message {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.error, .wrong  {
+  color: red;
+  animation: animateError 200ms ease-in-out;
+}
+
+.right {
+  color: #ffb900;
+  animation: animateRight 300ms ease-in;
+}
+
+@keyframes animateError {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(15px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-15px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animateRight {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  #man {
+    flex-direction: column;
+  }
+
+  #manImage {
+    height: 220px;
+  }
+}

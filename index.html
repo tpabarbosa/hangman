@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HangMan Game</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Hangman Game</h1>
+    </header>
+
+    <section class="page" id="page-1">
+      <h3>Can you save the poor man??</h3>
+      <img class="intro-image" src="./images/hangman.avif" alt="hanged man">
+      <form class="form">
+        <button id="yesBtn" class="btn" type="button">YES, I CAN!!</button>
+      </form>
+    </section>
+
+    <section class="page hidden" id="page-2">
+      <h3>Find the hidden word</h3>
+      <div id="man">
+        <img id="manImage" src="./images/0.jpg" alt="hanger">
+        <div id="message"></div>
+      </div>
+
+      <div id="word"> </div>
+
+      <div class="input-area">
+      <div class="letters">
+        Guessed letters:
+        <span id="guessedLetters"></span>
+      </div>
+
+      <form id="inputLetterForm" class="form">
+        <label for="letterInput">
+          <input id="userInput" type="text" required maxLength="1" placeholder="Enter a letter here"/>
+        </label>
+        <button id="enterBtn" class="btn">Enter</button>
+        <button id="startNewGame" class="btn" type="button">New Game</button>
+      </form>
+    </div>
+    </section>
+
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
