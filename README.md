@@ -7,7 +7,7 @@ To play, just guess a letter. If you guess incorrectly 6 times, you lose. If you
 ![hangman](/images/hangman.avif)
 
 
-> **Try it out here:**  [Hangman-Game](https://hangman-fs7k3vsyb-tpabarbosa.vercel.app/)
+> **Try it out here:**  [Hangman-Game](https://hangman-nu-three.vercel.app/)
 
 
 **Made With:**
