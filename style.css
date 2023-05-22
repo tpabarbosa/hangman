@@ -30,14 +30,20 @@ body {
   max-width: 300px;
 }
 
-#page-1 {
+#page-intro, #page-stats {
   background-color: white;
   color: #de5059;
 }
 
-#page-1 h3 {
+#page-intro h3, #page-stats h3 {
   background-color: white;
   color: #de5059;
+  font-size: 36px;
+}
+
+#stats div {
+  padding: 10px 0;
+  font-size: 20px;
 }
 
 h1{
@@ -139,7 +145,6 @@ h3{
 }
 
 .btn {
-  appearance:none;
   padding:10px 20px;
   border:none;
   background-color: #de5059;
@@ -205,9 +210,67 @@ h3{
   }
 }
 
-.hidden {
+
+
+#sound-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#sound-buttons.hidden {
   display: none;
 }
+
+.rounded-btn {
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  color: #fff;
+  background-color: #de5059;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.rounded-btn:hover{
+  box-shadow:0 0 4px rgba(0,0,0,0.5);
+  background-color: #9c2e35;
+}
+
+.rounded-btn:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+#musicNot, #sfxNot {
+  width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+
+#musicBtn:checked ~ label > #musicNot {
+  display: none;
+}
+
+
+#sfxBtn:checked ~ label > #sfxNot {
+  display: none;
+}
+
 
 @media (max-width: 500px) {
   #man {
@@ -217,4 +280,8 @@ h3{
   #manImage {
     height: 220px;
   }
+}
+
+.hidden {
+  display: none;
 }
