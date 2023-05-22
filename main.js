@@ -471,7 +471,7 @@ const soundPlayer = {
     this._sfxBtn.addEventListener('change', (e) => {
       this._should_play_sfx = e.target.checked
       this._toStorage()
-      this._soundPlayer.playSfx('click')
+      this.playSfx('click')
     })
   },
   _toStorage: function () {
